@@ -100,18 +100,24 @@ public class Coin implements CommandExecutor, TabCompleter {
         // Caso seja admin, player vai ter os seguintes comandos como complte
 
 
+        if (args.length == 1) {
+            if (sender.hasPermission("qcoin.admin")) {
+                completions.add("add");
+                completions.add("set");
+                completions.add("take");
+            }
 
-        if (sender.hasPermission("qcoin.admin")) {
-            completions.add("add");
-            completions.add("set");
-            completions.add("take");
+            if (plugin.getConfig().getBoolean("pay")) {
+                completions.add("pay");
+            }
+
+            completions.add("help");
+        } else if (args.length == 2) {
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                completions.add(player.getName());
+            }
         }
 
-        if (plugin.getConfig().getBoolean("pay")) {
-            completions.add("pay");
-        }
-
-        completions.add("help");
 
         //Coloca em ordem alfabetica
         Collections.sort(completions);
