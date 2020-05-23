@@ -99,6 +99,8 @@ public class Coin implements CommandExecutor, TabCompleter {
         List<String> completions = new ArrayList<>();
         // Caso seja admin, player vai ter os seguintes comandos como complte
 
+
+
         if (sender.hasPermission("qcoin.admin")) {
             completions.add("add");
             completions.add("set");

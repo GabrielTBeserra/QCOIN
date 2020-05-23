@@ -27,7 +27,7 @@ public class AddPlayer implements Listener {
             CoinData coindata = new CoinData();
             coindata.addPlayer(joinEvent.getPlayer());
         } catch (SQLException throwables) {
-
+            throwables.printStackTrace();
         }
     }
 

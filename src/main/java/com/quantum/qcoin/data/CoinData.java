@@ -23,7 +23,7 @@ public class CoinData {
 
         PreparedStatement preparedStatement = ConnectionFactory.getConnection().prepareStatement(newPlayer);
 
-        preparedStatement.executeUpdate();
+        preparedStatement.execute();
     }
 
     public void setCoin(Player player, double amount) throws SQLException {
