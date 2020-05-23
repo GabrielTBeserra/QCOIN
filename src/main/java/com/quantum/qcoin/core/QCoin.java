@@ -1,6 +1,9 @@
 package com.quantum.qcoin.core;
 
 import com.quantum.qcoin.commands.Coin;
+import com.quantum.qcoin.data.LoadTables;
+import org.bukkit.ChatColor;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class QCoin extends JavaPlugin {
@@ -10,11 +13,24 @@ public final class QCoin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
+        plugin.saveDefaultConfig();
+
+        new LoadTables();
         new Coin(this);
+
+        this.getServer().getConsoleSender().sendMessage(format("&aQCoin has enable!"));
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        this.getServer().getConsoleSender().sendMessage(format("&cQCoin has disable!"));
+        HandlerList.unregisterAll(this);
     }
+
+
+    private String format(String msg) {
+        return ChatColor.translateAlternateColorCodes('&', msg);
+    }
+
+
 }
