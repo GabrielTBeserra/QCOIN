@@ -12,7 +12,7 @@ public class LoadTables {
         }
     }
 
-    private void load() throws SQLException {
+    protected void load() throws SQLException {
         String coinBase = "create table if not exists coins(" +
                 "    uuid varchar(100) primary key," +
                 "    amount DOUBLE default 0 not null " +

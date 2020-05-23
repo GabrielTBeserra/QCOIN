@@ -15,7 +15,7 @@ public class ConnectionFactory {
         connection = DriverManager.getConnection("jdbc:sqlite:" + pl.getDataFolder() + "/coin.db");
     }
 
-    public static Connection getConnection() {
+    protected static Connection getConnection() {
 
         if (connection == null) {
             try {

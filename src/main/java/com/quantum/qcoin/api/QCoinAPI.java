@@ -35,6 +35,15 @@ public class QCoinAPI {
         }
     }
 
+    public static void takeCoin(Player player, double amount) {
+        CoinData coinData = new CoinData();
+        try {
+            coinData.takeCoin(player, amount);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 
 
 }

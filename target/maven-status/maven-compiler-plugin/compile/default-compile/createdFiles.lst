@@ -9,6 +9,5 @@ com\quantum\qcoin\subcommands\Take.class
 com\quantum\qcoin\core\QCoin.class
 com\quantum\qcoin\listener\AddPlayer.class
 com\quantum\qcoin\data\CoinData.class
-com\quantum\qcoin\Interfaces\DataEntity.class
 com\quantum\qcoin\data\ConnectionFactory.class
 com\quantum\qcoin\subcommands\Add.class

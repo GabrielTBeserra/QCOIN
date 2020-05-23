@@ -1,14 +1,13 @@
 package com.quantum.qcoin.data;
 
-import com.quantum.qcoin.Interfaces.DataEntity;
 import org.bukkit.entity.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CoinData implements DataEntity {
-    @Override
+public class CoinData {
+
     public void addPlayer(Player player) throws SQLException {
         String newPlayer = "insert into coins (uuid, amount) values (? , ?)";
 
@@ -19,7 +18,6 @@ public class CoinData implements DataEntity {
     }
 
 
-    @Override
     public void addCoin(Player player, double amount) throws SQLException {
         String newPlayer = "update coins set amount = amount + " + amount + " where uuid = '" + player.getUniqueId().toString() + "'";
 
@@ -28,7 +26,6 @@ public class CoinData implements DataEntity {
         preparedStatement.executeUpdate();
     }
 
-    @Override
     public void setCoin(Player player, double amount) throws SQLException {
         String newPlayer = "update coins set amount = " + amount + " where uuid = '" + player.getUniqueId().toString() + "'";
 
@@ -37,7 +34,6 @@ public class CoinData implements DataEntity {
         preparedStatement.execute();
     }
 
-    @Override
     public void takeCoin(Player player, double amount) throws SQLException {
         String newPlayer = "update coins set amount = amount - " + amount + " where uuid = '" + player.getUniqueId().toString() + "'";
 
@@ -46,7 +42,6 @@ public class CoinData implements DataEntity {
         preparedStatement.execute();
     }
 
-    @Override
     public double getCoin(Player player) throws SQLException {
         double ret = 0;
         String query = "select * from coins where uuid = ?";
