@@ -40,6 +40,18 @@ public class Coin implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length == 0) {
+            CoinData coinData = new CoinData();
+            double playerCoinValue = 0;
+            try {
+                playerCoinValue = coinData.getCoin((Player) sender);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            sender.sendMessage(">>" + playerCoinValue);
+            return true;
+        }
+
         String cmd = args[0].toLowerCase();
 
 
@@ -60,17 +72,6 @@ public class Coin implements CommandExecutor, TabCompleter {
             }
         }
 
-        if (args.length == 0) {
-            CoinData coinData = new CoinData();
-            double playerCoinValue = 0;
-            try {
-                playerCoinValue = coinData.getCoin((Player) sender);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-            sender.sendMessage(">>" + playerCoinValue);
-            return true;
-        }
 
         /**
          * Retorna a quantidade de coins que um player possui
@@ -84,7 +85,7 @@ public class Coin implements CommandExecutor, TabCompleter {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-            sender.sendMessage(">>" + playerCoinValue);
+            sender.sendMessage(">> " + playerCoinValue);
             return true;
         }
 
