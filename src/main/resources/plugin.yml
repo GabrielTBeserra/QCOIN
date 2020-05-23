@@ -1,0 +1,11 @@
+name: QCoin
+version: ${project.version}
+main: com.quantum.qcoin.core.QCoin
+prefix: QCoin
+authors: [1Ursoo]
+description: Coin plugin
+commands:
+  coin:
+    permission: teste
+    description: teste
+    usage: teste

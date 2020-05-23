@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="QCoin:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="QCoin.jar">
+      <element id="module-output" name="QCoin" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/xerial/sqlite-jdbc/3.31.1/sqlite-jdbc-3.31.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
