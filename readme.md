@@ -9,7 +9,6 @@ public class CoinImport {
         QCoinAPI.takeCoin(player , amount);
         QCoinAPI.setCoin(player , amount);
         QCoinAPI.getCoin(player);
-
     }
 }
 ```
