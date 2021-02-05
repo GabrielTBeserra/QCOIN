@@ -1,6 +1,7 @@
 com\quantum\qcoin\api\QCoinAPI.class
 com\quantum\qcoin\data\LoadTables.class
 com\quantum\qcoin\subcommands\Help.class
+com\quantum\qcoin\data\ConfigFile.class
 com\quantum\qcoin\subcommands\Pay.class
 com\quantum\qcoin\Interfaces\SubCommand.class
 com\quantum\qcoin\commands\Coin.class

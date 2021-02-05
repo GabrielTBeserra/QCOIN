@@ -1,4 +1,0 @@
-prefix: "&9&lQCOIN &c>> "
-## enable if the coins are transferable
-pay: false
-coin-name: "Coin"
