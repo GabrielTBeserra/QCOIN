@@ -1,6 +1,8 @@
-# qcoin
+# QCOIN
 
-### Import
+### Spigot plugin for coin System
+
+### API Methods
 
 ```java
 public class CoinImport {
